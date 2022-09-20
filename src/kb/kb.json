@@ -1,0 +1,5 @@
+{
+  "layout": "kb",
+  "permalink": "/{{ page.fileSlug }}/",
+  "tags": "Knowledge-base"
+}

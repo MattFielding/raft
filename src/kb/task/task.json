@@ -1,0 +1,5 @@
+{
+  "layout": "kb",
+  "permalink": "/task/{{ page.fileSlug }}/",
+  "tags": "Task"
+}

@@ -1,0 +1,9 @@
+<h2>Tasks</h2>
+{% for post in collections.Task %}
+<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+
+<h2>Knowledge</h2>
+{% for post in collections.Knowledge %}
+<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
