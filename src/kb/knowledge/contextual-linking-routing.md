@@ -1,12 +1,12 @@
 ---
 title: Contextual linking and routing
-templateEngineOverride: njk,md
+templateEngineOverride: md, njk
 ---
 
 There are a few reasons you may want to contextually change the url on a link or contextually route a user to diffrent place:
 
 1. In complex user journeys, where the path through isn't always linear, sometimes jumping steps and sometimes looping back to previous pages in the flow - back links suddenly don't make sense and would need to be contextual depending on where the user came from.
-2. Where a user clicks a _change_ link on a [[Check your details]] page and submits their change they would expect to return to the summary page again and not the next page in the flow.
+2. Where a user clicks a _change_ link on a [Check your details](check-details.html) page and submits their change they would expect to return to the summary page again and not the next page in the flow.
 
 1. Checking where the user came from and change the page accordingly
 2. Use routing to change the desitination after the page is re-submitted
@@ -65,3 +65,21 @@ router.get('/check-your-details', function (req, res) {
 When a user reaches the 'check-your-details' page a datastore variable is created to record the fact they have made it passed all the questions.
 
 When a 'change' link is clicked and the user modifies their answer we send them back to 'check-your-details' and not the next question by intercepting the form submission with __routes.js__ and re-routing them as we detect the datastore item is set to true.
+
+### getting nunjucts snippets working
+
+```twig
+{% raw %}<h2>Knowledge</h2>
+{% for post in collections.Knowledge %}
+<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+{% endraw %}
+```
+
+### testing diffs
+
+```diff-js
+- function myFunction() {
+  // replaced
++ function myFunction() {
+```
