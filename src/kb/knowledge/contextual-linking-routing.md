@@ -1,7 +1,13 @@
 ---
+eleventyNavigation:
+  key: contextual
+  parent: knowledge
+  title: Contextual linking and routing
+  excerpt: How to dsfjslkfj skfjf sdf fsdfjd lfsdf sdfjl
 title: Contextual linking and routing
 templateEngineOverride: md, njk
 ---
+
 
 There are a few reasons you may want to contextually change the url on a link or contextually route a user to diffrent place:
 

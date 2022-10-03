@@ -12,9 +12,13 @@
 </head>
 <body>
   <header>
-    <h1>{{ title }}</h1>
+    <p>Other Knowledge pages</p>
+    {% set navPages = collections.all | eleventyNavigation("knowledge-base") %}
+    {{ navPages | eleventyNavigationToHtml | safe }}
+    <hr>
   </header>
   <main>
+    <h1>{{ title }}</h1>
     {{ content | safe }}
   </main>
   {% initClipboardJS %}

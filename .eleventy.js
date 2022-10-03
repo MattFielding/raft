@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // const markdownIt = require('markdown-it');
 
 module.exports = function (eleventyConfig) {
@@ -11,6 +12,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(codeClipboard);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addWatchTarget("./src/sass/");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addFilter("randomItem", (arr) => {
