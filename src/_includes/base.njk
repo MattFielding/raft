@@ -7,14 +7,43 @@
 
 <body>
   <header>
-    <p>Other Knowledge pages</p>
-    {% set navPages = collections.all | eleventyNavigation("knowledge-base") %}
-    {{ navPages | eleventyNavigationToHtml | safe }}
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="cell">
+          {% set navPages = collections.all | eleventyNavigation("knowledge-base") %}
+
+          {% macro renderNavListItem(entry) -%}
+          <li {% if entry.url == page.url %} class="my-active-class"{% endif %}>
+            <a href="{{ entry.url }}">{{ entry.title }}</a>
+            {%- if entry.children.length -%}
+              <ul class="nested vertical menu">
+                {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+          {%- endmacro %}
+
+          <ul class="vertical menu">
+            {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <hr>
+
   </header>
   <main>
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="cell">
+
+          <h1>{{ title }}</h1>
+          {{ content | safe }}
+
+        </div>
+      </div>
+    </div>
   </main>
   {% initClipboardJS %}
 </body>
