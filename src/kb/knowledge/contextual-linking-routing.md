@@ -9,7 +9,7 @@ templateEngineOverride: md, njk
 ---
 
 
-There are a few reasons you may want to contextually change the url on a link or contextually route a user to diffrent place:
+There are a few reasons you may want to contextually change the url on a link or contextually route a user to different place:
 
 1. In complex user journeys, where the path through isn't always linear, sometimes jumping steps and sometimes looping back to previous pages in the flow - back links suddenly don't make sense and would need to be contextual depending on where the user came from.
 2. Where a user clicks a _change_ link on a [Check your details](check-details.html) page and submits their change they would expect to return to the summary page again and not the next page in the flow.
