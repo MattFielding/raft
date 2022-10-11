@@ -22,11 +22,16 @@ module.exports = function (eleventyConfig) {
     return arr.slice(0, 1);
   });
 
-  /* Markdown Overrides */
-  const markdownLibrary = markdownIt({
+  let options = {
     html: true,
     breaks: true,
-  }).use(wikilinks);
+  };
+
+
+  /* Markdown Overrides */
+  const markdownLibrary = markdownIt(options)
+    .use(codeClipboard.markdownItCopyButton)
+    .use(wikilinks);
 
   eleventyConfig.setLibrary('md', markdownLibrary);
 
