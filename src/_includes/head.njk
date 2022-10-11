@@ -25,18 +25,12 @@
 <meta property="og:type" content="{{ metatype }}">
 <meta property="og:url" content="{{ [site.baseurl, "/", page.url] | join }}">
 <meta property="og:image" content="/assets/avatar.png">
-<meta property="og:description" content="{{- metadesc -}}">
+<meta property="og:description" content="{{ metadesc }}">
 
 <link rel="canonical" href="{{ [site.baseurl, "/", page.url] | join }}">
 
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
-
-<link rel="preconnect" href="https://cdnjs.cloudflare.com/" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />#}
 
 <link rel="stylesheet" href="{{ '/css/prism-coldark-cold.css' | url }}" />
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
